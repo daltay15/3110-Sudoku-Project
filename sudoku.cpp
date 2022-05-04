@@ -46,3 +46,35 @@ bool sudoku::isSafe(int sudokuGrid[SIZE][SIZE], int row, int col, int num)
 
      return true;
 }
+
+bool sudoku::attemptSolve(int sudokuGrid[SIZE][SIZE], int row, int col)
+{
+    if (row == SIZE - 1 && col == SIZE)
+    {
+        return true;
+    }
+
+    if (col == SIZE) // if end of column reached go to next row and return the column to the beginning
+    {
+        row++;
+        col = 0;
+    }
+
+    if (sudokuGrid[row][col] > 0) // if the current postion contains a 0, iterate to next column
+    {
+        return attemptSolve(sudokuGrid, row, col + 1);
+    }
+
+    for (int num = 1; num <= SIZE; num++)
+    {
+        if (isSafe(sudokuGrid, row, col, num))
+        {
+            sudokuGrid[row][col] = num; // if safe to place number then place number in current spot
+
+            if (attemptSolve(sudokuGrid, row, col + 1)) // since the first number was correct, check to see if the next column is safe to place a number
+                return true;
+        }
+        sudokuGrid[row][col] = 0; // if wrong then return current spot to a 0
+    }
+    return false;
+}
