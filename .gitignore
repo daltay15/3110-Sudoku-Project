@@ -33,3 +33,6 @@ sudokuProject/x64/Debug/sudokuProject.tlog/sudokuProject.lastbuildstate
 sudokuProject/x64/Debug/sudokuProject.vcxproj.FileListAbsolute.txt
 sudokuProject/x64/Debug/vc143.idb
 sudokuProject/x64/Debug/vc143.pdb
+sudokuProject/x64/Debug/sudokuProject.tlog/unsuccessfulbuild
+sudokuProject/sudoku.cpp
+sudokuProject/sudoku.h
