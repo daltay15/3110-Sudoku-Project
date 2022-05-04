@@ -11,7 +11,7 @@ int main()
     int numZero = 0;
  
 
-    cout << "Enter sudoku puzzle.\nNote: each new line represents going right in the column\n";
+    cout << "Enter sudoku puzzle.\nNote: each new line represents going right in the column\nNote: Enter a 0 for a spot that is unknown.\n";
     while (i < SIZE)
     {
         cout << "Enter row: " << i + 1 << endl;
