@@ -12,6 +12,3 @@ public:
      bool isSafe(int sudokuGrid[SIZE][SIZE], int row, int col, int num);
      bool attemptSolve(int sudokuGrid[SIZE][SIZE], int row, int col);
 };
-
-
-

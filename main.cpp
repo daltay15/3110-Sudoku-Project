@@ -10,6 +10,25 @@ int main()
     int i = 0;
     int j = 0;
 
+    while (i < SIZE)
+    {
+        cout << "Enter row: " << i + 1 << endl;
+        do
+        {
+            int num = 0;
+            cin >> num;
+            if (num < 0 || num > SIZE)
+                cout << "Error, insert a number between 0 and " << SIZE << "." << endl;
+            else
+            {
+                sudokuGrid[i][j] = num;
+                j++;
+            }
+        } while (j < SIZE);
+        i++;
+        j = 0;
+    }
+
     cout << "The starting grid is" << endl;
     sd.printGrid(sudokuGrid);
     cout << endl << endl;
