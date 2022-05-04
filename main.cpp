@@ -32,14 +32,14 @@ int main()
     cout << "The starting grid is" << endl;
     sd.printGrid(sudokuGrid);
     cout << endl << endl;
-
+    
     if (sd.attemptSolve(sudokuGrid, 0, 0))
     {
         cout << "The solved grid is" << endl;
         sd.printGrid(sudokuGrid);
     }
     else
-        cout << "Can't find a solution to given sudoku puzzle." << endl;
+        cout << "Can't find a solution to given sudoku puzzle." << endl;    // if puzzle unsolvable, output
 
     return 0;
 }
