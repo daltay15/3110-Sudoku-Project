@@ -11,7 +11,24 @@ int main()
     int numZero = 0;
  
 
-    cout << "Enter sudoku puzzle.\nNote: each new line represents going right in the column\n";
+    cout << "Enter sudoku puzzle.\nNote: each new line represents going right in the column\nNote: Enter a 0 for a spot that is unknown.\n\n";
+    cout << "The layout below will help you understand on how to place your inputs and the zeros:\n\n";
+
+    cout << "  Coloum 1  ||  Coloum 2\n"
+         "|___|___|___||___|___|___|\n"
+         "|   |   |   ||   |   |   | First row\n"
+         "|---|---|---||---|---|---|\n"
+         "|   |   |   ||   |   |   | Second row\n"
+         "|___|___|___||___|___|___|\n"
+         "|   |   |   ||   |   |   | Third row\n"
+         "|---|---|---||---|---|---|\n"
+         "|   |   |   ||   |   |   | Fourth row\n"
+         "|___|___|___||___|___|___|\n"
+         "|   |   |   ||   |   |   | Fifth row\n"
+         "|---|---|---||---|---|---|\n"
+         "|   |   |   ||   |   |   | Sixth row\n"
+         "|___|___|___||___|___|___|\n\n";
+
     while (i < SIZE)
     {
         cout << "Enter row: " << i + 1 << endl;
