@@ -1,7 +1,9 @@
 #include "sudoku.h"
 #include <iostream>
+
 using namespace std;
-int numZero = 0;
+
+
 void sudoku::printGrid(int arr[SIZE][SIZE])
 {
     for (int i = 0; i < SIZE; i++)
@@ -9,10 +11,6 @@ void sudoku::printGrid(int arr[SIZE][SIZE])
         for (int j = 0; j < SIZE; j++)
         {
             cout << arr[i][j] << " "; // print out the sudoku grid
-            if (arr[i][j] == 0) // checks to see if the current position has a 0
-            {
-                numZero++;  // used in attemptSolve
-            }
         }
         cout << endl;
     }
@@ -20,9 +18,7 @@ void sudoku::printGrid(int arr[SIZE][SIZE])
 
 bool sudoku::isSafe(int sudokuGrid[SIZE][SIZE], int row, int col, int num)
 {
-
-
-    for (int x = 0; x <= SIZE; x++)
+    for (int x = 0; x <= SIZE - 1; x++)
     {
         if (sudokuGrid[row][x] == num) // check row for the same number
         {
@@ -30,9 +26,9 @@ bool sudoku::isSafe(int sudokuGrid[SIZE][SIZE], int row, int col, int num)
         }
     }
 
-    for (int y = 0; y <= SIZE; y++)
+    for (int x = 0; x <= SIZE - 1; x++)
     {
-        if (sudokuGrid[y][col] == num) // check column for the same number
+        if (sudokuGrid[x][col] == num) // check column for the same number
         {
             return false;
         }
@@ -55,9 +51,6 @@ bool sudoku::isSafe(int sudokuGrid[SIZE][SIZE], int row, int col, int num)
 
 bool sudoku::attemptSolve(int sudokuGrid[SIZE][SIZE], int row, int col)
 {
-    if (numZero == 0)   // if no 0s are present in the input then return false
-        return false;
-
     if (row == SIZE - 1 && col == SIZE)
     {
         return true;
