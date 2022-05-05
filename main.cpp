@@ -9,12 +9,8 @@ int main()
     int i = 0;
     int j = 0;
     int numZero = 0;
-<<<<<<< Updated upstream
- 
-=======
 
 
->>>>>>> Stashed changes
     cout << "Enter sudoku puzzle.\nNote: each new line represents going right in the column\nNote: Enter a 0 for a spot that is unknown.\n\n";
     cout << "The layout below will help you understand on how to place your inputs and the zeros:\n\n";
 
