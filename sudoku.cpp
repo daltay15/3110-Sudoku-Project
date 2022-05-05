@@ -37,11 +37,15 @@ void sudoku::getInput(int sudokuGrid[SIZE][SIZE])
     string input;
     for (int i = 0; i < SIZE; i++)
     {
+        int num = 0;
             REPEAT:do
             {
+                if (num >= 1)
+                    cout << "\n\nInvalid number of inputs, please enter " << SIZE << " digits.\n\n";
                 cout << "\nEnter Row: " << i + 1 << endl;
                 cin >> input;
-            } while (input.length() != SIZE);   // if user didn't input the correct amount of digits, redo
+                num++;
+            } while (input.length() != SIZE);  // if user didn't input the correct amount of digits, redo
 
             for (int j = 0; j < SIZE; j++)
             {
