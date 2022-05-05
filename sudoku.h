@@ -1,6 +1,6 @@
 using namespace std;
 
-#define SIZE 6
+#define SIZE 9
 
 class sudoku
 {

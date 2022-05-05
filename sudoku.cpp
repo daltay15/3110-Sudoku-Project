@@ -37,26 +37,28 @@ void sudoku::getInput(int sudokuGrid[SIZE][SIZE])
     string input;
     for (int i = 0; i < SIZE; i++)
     {
-        do
-        {
-            cout << "Enter Row: " << i + 1 << endl;
-            cin >> input;
-        } while (input.length() != SIZE);   // if user didn't input the correct amount of digits, redo
-
-        for (int j = 0; j < SIZE; j++)
-        {
-            int num = input[j] - '0';
-            cout << num << " ";
-            if (num == 0)   // used to check if user entered any 0s, if none will be used to throw error.
-                numZero++;
-
-            if (num < 0 || num > SIZE)
+            REPEAT:do
             {
-                cout << "\nError, insert a number between 0 and " << SIZE << "." << endl; // makes sure the user inputs valid digits
+                cout << "\nEnter Row: " << i + 1 << endl;
+                cin >> input;
+            } while (input.length() != SIZE);   // if user didn't input the correct amount of digits, redo
+
+            for (int j = 0; j < SIZE; j++)
+            {
+                int num = input[j] - '0';
+                cout << num << " ";
+                if (num == 0)   // used to check if user entered any 0s, if none will be used to throw error.
+                    numZero++;
+                // test
+                if (num < 0 || num > SIZE)
+                {
+                    cout << "\n\nError, insert a number between 0 and " << SIZE << "." << endl << endl; // makes sure the user inputs valid digits
+                    goto REPEAT;
+                }
+                else
+                    sudokuGrid[i][j] = num;
             }
-            else
-                sudokuGrid[i][j] = num;
-        }
+            cout << "Successfully inputted Row " << i + 1 << endl;
     }
     if (numZero == 0)   // if user didn't input any 0s, output
     {
