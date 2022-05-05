@@ -31,6 +31,39 @@ int sudoku::getBoxWidth()
     }
 }
 
+void sudoku::getInput(int sudokuGrid[SIZE][SIZE])
+{
+    int numZero = 0;
+    string input;
+    for (int i = 0; i < SIZE; i++)
+    {
+        do
+        {
+            cout << "Enter Row: " << i + 1 << endl;
+            cin >> input;
+        } while (input.length() != SIZE);   // if user didn't input the correct amount of digits, redo
+
+        for (int j = 0; j < SIZE; j++)
+        {
+            int num = input[j] - '0';
+            cout << num << " ";
+            if (num == 0)   // used to check if user entered any 0s, if none will be used to throw error.
+                numZero++;
+
+            if (num < 0 || num > SIZE)
+            {
+                cout << "\nError, insert a number between 0 and " << SIZE << "." << endl; // makes sure the user inputs valid digits
+            }
+            else
+                sudokuGrid[i][j] = num;
+        }
+    }
+    if (numZero == 0)   // if user didn't input any 0s, output
+    {
+        cout << "\nNo Zeros entered, can't find a solution.\n";
+    }
+}
+
 void sudoku::printGrid(int arr[SIZE][SIZE])
 {
     for (int i = 0; i < SIZE; i++)
@@ -93,7 +126,6 @@ bool sudoku::attemptSolve(int sudokuGrid[SIZE][SIZE], int row, int col)
     {
         return attemptSolve(sudokuGrid, row, col + 1);
     }
-
 
     for (int num = 1; num <= SIZE; num++)
     {
