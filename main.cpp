@@ -18,7 +18,7 @@ int main()
     cout << "The layout below will help you understand on how to place your inputs and the zeros:\n\n";
     if (SIZE == 6)
     {
-        cout << "          Column          \n"
+    cout << "          Column          \n"
             "  1   2   3    4   5   6  \n"
             "|___|___|___||___|___|___|\n"
             "|   |   |   ||   |   |   | First row\n"
