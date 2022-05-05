@@ -11,6 +11,7 @@ int main()
     int numZero = 0;
  
 
+    cout << "Enter sudoku puzzle.\nNote: each new line represents going right in the column\nNote: Enter a 0 for a spot that is unknown.\n";
     cout << "Enter sudoku puzzle.\nNote: each new line represents going right in the column\nNote: Enter a 0 for a spot that is unknown.\n\n";
     cout << "The layout below will help you understand on how to place your inputs and the zeros:\n\n";
 
