@@ -3,6 +3,33 @@
 
 using namespace std;
 
+int sudoku::getBoxHeight()
+{
+    int boxRowHeight = 0;
+
+    if (SIZE == 6)
+    {
+        return 2;
+    }
+    else if (SIZE == 9)
+    {
+        return 3;
+    }
+}
+
+int sudoku::getBoxWidth()
+{
+    int boxRowWidth = 0;
+
+    if (SIZE == 6)
+    {
+        return 3;
+    }
+    else if (SIZE == 9)
+    {
+        return 3;
+    }
+}
 
 void sudoku::printGrid(int arr[SIZE][SIZE])
 {
@@ -34,11 +61,11 @@ bool sudoku::isSafe(int sudokuGrid[SIZE][SIZE], int row, int col, int num)
         }
     }
 
-    int startRow = row - row % boxRowHeight;
-    int startCol = col - col % boxColWidth;
+    int startRow = row - row % getBoxHeight();
+    int startCol = col - col % getBoxWidth();
 
-    for (int i = 0; i < boxRowHeight; i++)
-        for (int j = 0; j < boxColWidth; j++)
+    for (int i = 0; i < getBoxHeight(); i++)
+        for (int j = 0; j < getBoxWidth(); j++)
         {
             if (sudokuGrid[i + startRow][j + startCol] == num) // checks the respective box to see if the number already exists
             {
